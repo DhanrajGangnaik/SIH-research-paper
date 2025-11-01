@@ -1,0 +1,145 @@
+
+\documentclass[12pt]{article}
+
+% ---------- Encoding & Fonts ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% ---------- Page setup ----------
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{setspace}
+\setstretch{1.2}
+
+% ---------- Packages ----------
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage[numbers,sort&compress]{natbib}
+
+% ---------- Graphics path ----------
+\graphicspath{{./Graphs/}{./}}
+
+% ---------- Safe include for missing images ----------
+\makeatletter
+\newcommand{\safeincludegraphics}[2][]{%
+\IfFileExists{#2}{%
+    \includegraphics[#1]{#2}%
+}{%
+    \fbox{%
+    \begin{minipage}[c][0.30\textheight][c]{0.9\linewidth}
+        \centering \vspace*{1ex}
+        \textbf{Image not found:}\\[0.5ex]\texttt{#2}\\[1ex]
+        (Place the file under \texttt{./Graphs/} or update \verb|\graphicspath|.)
+        \vfill
+    \end{minipage}%
+    }%
+}%
+}
+\makeatother
+
+% ---------- Section macro: start major sections on a new page ----------
+\newcommand{\Section}[1]{\clearpage\section{#1}}
+
+% ---------- Title ----------
+\title{\textbf{Assessing Agricultural Practices and Groundwater Dynamics in Maharashtra: A Data-Driven Study}}
+\author{FirstName LastName \\ \small Department / University, City, Country \\ \small \texttt{email@example.com}}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper investigates the critical disconnect between Maharashtra's projected agricultural
+growth in 2025 and its rapidly deteriorating groundwater security. By synthesizing state
+economic surveys, hydrogeological assessments, and socio-economic data, it exposes a
+paradox of "profitless growth" driven by the unsustainable cultivation of water-intensive cash
+crops, particularly sugarcane, in arid and semi-arid regions. The analysis reveals that
+state-level metrics of "safe" groundwater extraction mask severe, localized crises in
+Marathwada and Vidarbha, where the depletion of aquifers has eroded farmers' resilience to
+climate variability, fueling a deep-seated agrarian crisis. A critical evaluation of state
+policies—from the largely ineffective Groundwater Act of 2009 to contradictory schemes that
+simultaneously promote conservation and over-extraction—highlights a fragmented and
+incoherent governance landscape. The paper argues for a paradigm shift from supply-side
+augmentation to integrated demand-side management, proposing a policy framework aimed
+at decoupling agricultural prosperity from hydrological debt through targeted reforms in
+cropping patterns, water pricing, and community-centric governance.
+\end{abstract}
+\clearpage
+\tableofcontents
+\clearpage
+
+\section{Introduction}
+Groundwater is the primary lifeline for agricultural productivity in the state of Maharashtra, India. With over 55 percent of farmland dependent on groundwater-based irrigation, the sustainability of this resource is critical for food security, rural livelihood, and economic stability. 
+However, increasing extraction, climate variability, and policy gaps have resulted in severe groundwater depletion across multiple districts.
+This paper presents an analytical study of groundwater availability, its rate of depletion, and the resulting implications for agricultural practices in Maharashtra. The work integrates survey findings, secondary datasets, and field observations to derive patterns, risks, and possible mitigation strategies.
+
+\textbf{Source Basis:} The content below is derived from the provided PDF source. Where direct tables/figures are not available as data, placeholders are included for future replacement with real plots and tables. See e.g., \cite{ref1,ref2}.
+
+\Section{Background and Related Work}
+Provide a concise review of relevant literature on: (i) trends in groundwater extraction and recharge in India, (ii) crop water requirements, (iii) policy instruments (subsidies, MSP, crop insurance), and (iv) remote sensing or in-situ monitoring in Maharashtra.
+
+\Section{Study Area and Data}
+\subsection{Study Area}
+Briefly describe Maharashtra's agro-climatic zones, rainfall patterns, monsoon variability, soil types, and historical drought incidence.
+
+\subsection{Data Sources}
+Summarize data sources (e.g., rainfall, groundwater levels, cropping patterns, well census, farmer surveys). Where the original PDF contains textual descriptions rather than structured tables, convert them into clear bullet lists or tables.
+
+\Section{Methodology}
+Describe the analytical framework: preprocessing, normalizations (e.g., seasonal detrending of groundwater level), and indicators (e.g., water table fluctuation, irrigated area share, crop mix index).
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Preprocessing:} Data cleaning, outlier removal, unit harmonization.
+    \item \textbf{Indicators:} Groundwater level change (m), rainfall anomaly (\%), irrigation intensity (\%), crop diversification index.
+    \item \textbf{Visualization:} Time series, bar charts, and heat maps.
+\end{itemize}
+
+\Section{Results}
+\subsection{Trend of Groundwater Level}
+Insert a time-series figure summarizing seasonal/annual fluctuations (placeholder shown in Fig.~\ref{fig:gw_trend}).
+
+\begin{figure}[h]
+    \centering
+    \safeincludegraphics[width=0.9\linewidth]{fig1_placeholder.png}
+    \caption{Placeholder: Trend of groundwater level over time. Replace with real data and regenerate the plot.}
+    \label{fig:gw_trend}
+\end{figure}
+
+\subsection{Crop Yield and Water Use}
+Summarize crop-wise water requirements, sowing windows, and yields (placeholder shown in Fig.~\ref{fig:yield_bar}).
+
+\begin{figure}[h]
+    \centering
+    \safeincludegraphics[width=0.9\linewidth]{fig2_placeholder.png}
+    \caption{Placeholder: Crop yield by season. Replace with real data and regenerate the plot.}
+    \label{fig:yield_bar}
+\end{figure}
+
+\subsection{Irrigation Practices}
+Discuss adoption of micro-irrigation (drip/sprinkler), canal command areas, and well-based irrigation. Note spatial heterogeneity and operational constraints (power supply, maintenance).
+
+\Section{Discussion}
+Interpret results with respect to climatic variability, energy-water nexus, agronomic choices, and policy implications.
+
+\Section{Limitations}
+List the constraints: unavailability of granular time series in the input, uncertainties from textual-to-quantitative conversion, and potential sampling or reporting biases.
+
+\Section{Conclusion and Future Work}
+Provide a concise summary and list next steps (structured datasets, analysis code, geospatial visualizations).
+
+\Section*{Acknowledgments}
+This draft was structured from a provided document/PDF. The authors thank all contributors and institutions responsible for the original material and field knowledge.
+
+\clearpage
+\bibliographystyle{unsrtnat} % simple numeric order
+\nocite{*} % TEMP: include all refs from refs.bib until explicit \cite are added
+\bibliography{refs}
+
+\appendix
+\Section{Extracted Text (Optional)}
+Paste any extracted text here for later organization.
+
+\end{document}
